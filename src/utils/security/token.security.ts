@@ -153,7 +153,7 @@ export const decodeToken = async ({
   return { user, decoded };
 };
 
-export const createRvokeToken = async (
+export const createRevokeToken = async (
   decoded: JwtPayload
 ): Promise<HTokenDocument> => {
   const tokenModel = new TokenRepository(TokenModel);
@@ -173,7 +173,7 @@ export const createRvokeToken = async (
     })) || [];
 
   if (!result) {
-    throw new BadRequestException("fail to revok this token");
+    throw new BadRequestException("fail to revoke this token");
   }
 
   return result;
